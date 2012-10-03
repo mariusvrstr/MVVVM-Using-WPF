@@ -1,0 +1,21 @@
+﻿<Window x:Class="MVVMExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="299">    
+   
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock Text="Student Details" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="lblStudentName" Text="Name"/>
+            <TextBox x:Name="txtStudentName" Width="200" Text="{Binding Student.FirstName, Mode=TwoWay}" />
+            <TextBlock x:Name="lblSurname" Text="Surname" />
+            <TextBox x:Name="txtSurname" Width="200" Text="{Binding Student.LastName, Mode=TwoWay}" />
+            <TextBlock x:Name="lblAge" Text="Age" />
+            <TextBox x:Name="txtAge" Width="200" Text="{Binding Student.Age, Mode=TwoWay}" />
+            <TextBlock x:Name="lblFulName" Text="{Binding Student.FullName, Mode=OneWay}" Margin="0,20" HorizontalAlignment="Center" />
+            <Button x:Name="btnSetDefault" Content="Restore Default" Command="{Binding Student.SetDefault}" Width="150" />
+            <Button x:Name="btnSaveStudent" Content="Save Student" Command="{Binding Student.Save}" Width="150" Margin="0,5"  />
+        </StackPanel>        
+    </Grid>
+    
+</Window>
